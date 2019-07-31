@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <script src="../static/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/lib/jquery.url.js"></script>
+    <script type="text/javascript">
+        function showTime(){
+            nowtime = new Date();
+            year = nowtime.getFullYear();
+            month = nowtime.getMonth() + 1;
+            date = nowtime.getDate();
+            document.getElementById("mytime").innerText
+                = year + "年" + month + "月" + date + "日 "
+                + nowtime.toLocaleTimeString();
+        }
+        setInterval("showTime()", 1000)
+    </script>
+
+</head>
+<body>
+    <h1>这是Homepage，需要token授权。</h1>
+    <h1>当你看到这段文字的时候，说明您已经获得授权并成功登录</h1>
+    <span id="mytime"></span>
+</body>
+</html>

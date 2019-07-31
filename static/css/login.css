@@ -1,0 +1,55 @@
+body {
+    display: grid;
+    background-color: #292421;
+    color: #082E54;
+    font-family: "Fjalla One", Arial;
+}
+
+form {
+    line-height: 25px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2{
+    font-size: 1em;
+}
+
+h3{
+    font-size: 0.1px;
+}
+
+.login {
+    width: 20%;
+    min-width: 35%;
+    margin: 15% auto;
+    display: block;
+    padding: 2%;
+    height: 40vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    text-align: center;
+}
+。login-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 15px;
+}
+.login-content input{
+    width: 40%;
+    height: 20%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-indent: 0.5em;
+}
+.login-content input[type='submit']{
+    width: 20%;
+    text-indent: 0.2em;
+    background-color: #DCDCDC;
+    color: #000000;
+}
