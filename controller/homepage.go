@@ -12,9 +12,3 @@ func HomePage(c *gin.Context) {
 		c.HTML(http.StatusOK, "Home.html", gin.H{"title": "首页"})
 	}
 }
-/*
-func HomePost(c * gin.Context){
-
-}
-
- */

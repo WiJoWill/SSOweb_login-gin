@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"html/template"
 	"net/http"
 	"strconv"
 	"web_login/model"
@@ -30,19 +31,20 @@ func DB_Info_Post(c * gin.Context){
 	//通过用户id搜寻对应信息并存储
 	var data []string
 	for i := 0; i < 5; i++ {
-		info := model.QueryUserInfoWithID(i+1)
+		info := template.HTMLEscapeString(model.QueryUserInfoWithID(i+1))
 		data = append(data, info)
 	}
 	//传递json数据
-	c.JSON(http.StatusOK, gin.H{"code": 0,  "data" : data})
+	c.JSON(http.StatusOK, gin.H{"code": 0, "UsersInfo": data})
 }
 
 func RequestUserInfo(token string) string{
 	fmt.Println(token)
-	username := model.GetTokenValue(token)
+	username := template.HTMLEscapeString(model.GetTokenValue(token))
 	if username == "false"{
 		return "Something Wrong. Please Check."
 	}
+	//对外
 	user_id := model.QueryUserWithUsername(username)
 	user_status := model.QueryUserStatusWithUsername(username)
 	//user_password := model.QueryUserPasswordWithID(user_id)

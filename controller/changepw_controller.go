@@ -2,6 +2,7 @@ package controller
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"html/template"
 	"net/http"
 	"web_login/model"
 	"web_login/utility"
@@ -12,9 +13,9 @@ func  ChangepwGet(c *gin.Context) {
 }
 func ChangepwPost(c *gin.Context){
 	//获取信息
-	username := c.PostForm("username")
-	password := c.PostForm("password")
-	reassure := c.PostForm("reassure")
+	username := template.HTMLEscapeString(c.PostForm("username"))
+	password := template.HTMLEscapeString(c.PostForm("password"))
+	reassure := template.HTMLEscapeString(c.PostForm("reassure"))
 	fmt.Println(username, password, reassure)
 
 	//判断该用户名是否被注册，如果未被注册，返回错误
