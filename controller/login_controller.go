@@ -32,6 +32,16 @@ func LoginPost(c *gin.Context) {
 	password:= template.HTMLEscapeString(c.PostForm("password"))
 	fmt.Println("username:", username, ",password:", password)
 
+	//这个是安全算法的一种 没启用 对应register里的第一个注释掉的安全加密
+	//id := model.QueryUserWithParam(username, utility.MD5(username+password))
+
+	/*
+	这个注释掉的是加随机盐值的安全算法，后来加的，作为参考
+	saltstring := model.QueryUserSaltWithUsername(username)
+
+	password = utility.MD5(password+saltstring)
+	*/
+
 	id := model.QueryUserWithParam(username, utility.MD5(password))
 	fmt.Println("id:", id)
 

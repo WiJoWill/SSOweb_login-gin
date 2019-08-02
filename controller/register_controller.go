@@ -38,6 +38,21 @@ func RegisterPost(c *gin.Context){
 
 	//注册用户名和密码
 	//密码是md5后的数据
+
+	//这个注释掉的是安全算法的一种，因为测试的时候没使用，所以作为参考
+	//password = utility.MD5(username + password)
+
+	/* 这个注释掉的是加随机盐值的安全算法，后来加的，作为参考
+	saltstring := strconv.FormatInt(rand.Int63(),10)
+	salt := model.UserSalt{0, saltstring}
+	_, errsalt := model.InsertUserSalt(salt)
+	if errsalt != nil{
+		c.JSON(http.StatusOK, gin.H{"code":0,"message":"加盐失败"})
+		return
+	}
+	password = utility.MD5(password+saltstring)
+	*/
+
 	password = utility.MD5(password)
 	fmt.Println("md5后：",password)
 

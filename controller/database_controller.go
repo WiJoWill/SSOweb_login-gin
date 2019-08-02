@@ -38,7 +38,15 @@ func DB_Info_Post(c * gin.Context){
 	c.JSON(http.StatusOK, gin.H{"code": 0, "UsersInfo": data})
 }
 
-func RequestUserInfo(token string) string{
+func RequestUserInfo(token string, ip string) string{
+	//验证请求者的ip地址是否与登录时一致，如果不一致则要求用户重新登录
+	//这里没有加入redirect命令，可以自行添加
+	if !model.CheckIPAndToken(ip, token){
+		fmt.Println("IP与登录地址不符，请重新登录")
+		return "Something Wrong. Please Check."
+	}
+	fmt.Println("ip地址为:" + ip)
+	//
 	fmt.Println(token)
 	username := template.HTMLEscapeString(model.GetTokenValue(token))
 	if username == "false"{
