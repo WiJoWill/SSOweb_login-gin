@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="715bd8af-497c-4166-a1ba-1f219e60055e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/2view/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2view/img/check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2view/img/checked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2view/img/login_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2view/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2view/js/particles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/changepw_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/changepw_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/database_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/database_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/login_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/register_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/register_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/login_web.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/login_web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/register.html" afterDir="false" />
-    </list>
+    <list default="true" id="715bd8af-497c-4166-a1ba-1f219e60055e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/login_web.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+            <state relative-caret-position="125">
+              <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -574,8 +557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/login_web.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+        <state relative-caret-position="125">
+          <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
         </state>
       </provider>
     </entry>

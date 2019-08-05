@@ -40,17 +40,58 @@ gin框架(https://github.com/gin-gonic/gin)
 
 ##### Controllers
 
+- homepage.go
+- register_controller.go
+- login_controller.go
+- token_controller.go
+- database_controller.go
+- changepw_controller.go
+
 ##### Databases
+
+- mysql.go
+- salt.go
 
 ##### Models
 
+- redis_model.go
+- salt_model.go
+- user_model.go
+
 ##### Routers
+
+- router.go
 
 ##### Statics
 
+- 2view
+  - css
+    - login.css
+  - img
+    - check.png
+    - checked.png
+    - login_background
+  - js
+    - app.js
+    - particles.js
+- js
+  - lib
+    - jQuery.url.js
+    - jQuery - 3.3.1.min.js
+  - db_info.js
+  - login_web.js
+
 ##### Utility
 
+- utils.go
+
 ##### Views
+
+- Home.html
+- login.html
+- register.html
+- change-password.html
+- db_info.html
 
 ----
 
