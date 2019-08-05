@@ -1,4 +1,4 @@
-## Golang编写的sso单点登录系统
+Golang编写的sso单点登录系统
 
 #### 项目简介
 
@@ -50,7 +50,38 @@ gin框架(https://github.com/gin-gonic/gin)
 ##### Databases
 
 - mysql.go
+
+  - 启动Mysql，并且验证是否有用户表格
+
+  - ```go
+    func InitMysql(){}
+    ```
+
+  - 创建用户表
+
+  - ```go
+    func CreateTableWithUser(){}
+    ```
+
+  - 执行数据库，使用db.Exec命令
+
+  - ```go
+    func ModifyDB(sql string, args ... interface{})(int64, error){}
+    ```
+
+  - 查询数据库
+
+  - ```go
+    func QueryRowDB(sql string) *sql.Row{}
+    ```
+
 - salt.go
+
+  - 创建盐表
+
+  - ```go
+    func ModifyDBSalt(sql string, args ...interface{})(int64, error){}
+    ```
 
 ##### Models
 
@@ -62,36 +93,56 @@ gin框架(https://github.com/gin-gonic/gin)
 
 - router.go
 
+  - 启动路由，每个部分有对应注释
+
+  - ```go
+    func InitRouter() *gin.Engine{}
+    ```
+
 ##### Statics
 
 - 2view
   - css
     - login.css
-  - img
+      - 登录页面的css文件「请看注释」
+  - img - 服务登录页面的图片
     - check.png
     - checked.png
-    - login_background
-  - js
+    - login_background.png
+  - js - 给动态页面服务的js
     - app.js
     - particles.js
 - js
-  - lib
+  - lib - 一些js源文件
     - jQuery.url.js
     - jQuery - 3.3.1.min.js
   - db_info.js
+    - 给db_info页提供功能
   - login_web.js
+    - 给login_web提供登录和注册功能
 
 ##### Utility
 
 - utils.go
 
+  - MD5加密功能，注释里提供了加盐的方式
+
+  - ```go
+    func MD5 (str string) string{}
+    ```
+
 ##### Views
 
 - Home.html
+  - 「请直接读代码和注释」
 - login.html
+  - 「请直接读代码和注释」
 - register.html
+  - 「请直接读代码和注释」
 - change-password.html
+  - 「请直接读代码和注释」
 - db_info.html
+  - 「请直接读代码和注释」
 
 ----
 
@@ -99,6 +150,7 @@ gin框架(https://github.com/gin-gonic/gin)
 
 - Jul.31, 2019: 第一次上传整个草稿式代码
 - Aug.1, 2019: 修改了前端页面显示Json信息，并且添加了部分Readme内容
+- Aug.5, 2019: 换了个好看点的ui，并且添加了README的内容，并且提供了更加安全的用户信息保存方法（在注释里，未启用）。
 
 ----
 

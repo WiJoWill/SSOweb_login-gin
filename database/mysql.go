@@ -13,6 +13,7 @@ func InitMysql() {
 	if db == nil {
 		db, _ = sql.Open("mysql", "root:will20000324@tcp(127.0.0.1:3306)/web_login?charset=utf8")
 		CreateTableWithUser()
+		CreateTableWithSalt()
 	}
 }
 
