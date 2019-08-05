@@ -38,7 +38,6 @@ func LoginPost(c *gin.Context) {
 	/*
 	这个注释掉的是加随机盐值的安全算法，后来加的，作为参考
 	saltstring := model.QueryUserSaltWithUsername(username)
-
 	password = utility.MD5(password+saltstring)
 	*/
 

@@ -18,9 +18,6 @@ func RegisterGet(c *gin.Context) {
 func RegisterPost(c *gin.Context){
 	//c.Header("Content-Type","text/javascript")
 	//获取信息
-	//username := c.PostForm("username")
-	//password := c.PostForm("password")
-	//reassure := c.PostForm("reassure")
 	//加了转义字符验证的获取信息
 	username := template.HTMLEscapeString(c.PostForm("username"))
 	password := template.HTMLEscapeString(c.PostForm("password"))
@@ -35,10 +32,6 @@ func RegisterPost(c *gin.Context){
 		c.JSON(http.StatusOK, gin.H{"code":0,"message":"用户名已经存在"})
 		return
 	}
-
-	//注册用户名和密码
-	//密码是md5后的数据
-
 	//这个注释掉的是安全算法的一种，因为测试的时候没使用，所以作为参考
 	//password = utility.MD5(username + password)
 
@@ -53,6 +46,8 @@ func RegisterPost(c *gin.Context){
 	password = utility.MD5(password+saltstring)
 	*/
 
+	//注册用户名和密码
+	//密码是md5后的数据
 	password = utility.MD5(password)
 	fmt.Println("md5后：",password)
 

@@ -58,5 +58,5 @@ func RequestUserInfo(token string, ip string) string{
 	//user_password := model.QueryUserPasswordWithID(user_id)
 	return "username is " + username + "; user_id is " +
 		strconv.Itoa(user_id) + "; user_status is " +
-		strconv.Itoa(user_status) //+ "user_password is " + user_password
+		strconv.Itoa(user_status)
 }

@@ -21,7 +21,7 @@ func ChangepwPost(c *gin.Context){
 	//判断该用户名是否被注册，如果未被注册，返回错误
 	id := model.QueryUserWithUsername(username)
 	fmt.Println("id:",id)
-	if id == -1 {
+	if id <= 0 {
 		c.JSON(http.StatusOK, gin.H{"code":0,"message":"用户名不存在，请检查"})
 		return
 	}

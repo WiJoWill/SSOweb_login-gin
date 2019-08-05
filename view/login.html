@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>登录界面</title>
-    <link rel="stylesheet" href="../static/css/login.css" type="text/css">
+  <meta charset="utf-8">
+  <title>登录页面</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="../static/2view/css/login.css">
     <script src="../static/js/lib/jquery-3.3.1.min.js"></script>
     <script src="../static/js/lib/jquery.url.js"></script>
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
@@ -12,16 +15,42 @@
     <script src="../static/js/login_web.js"></script>
 </head>
 <body>
-<div class= "login">
-    <h1 class="title">登录界面</h1>
+<!-- particles.js container -->
+<div id="particles-js" style="display: flex;align-items: center;justify-content: center">
+</div>
+<div class="login-page">
     <form action="" class="login-content" id="login-form" method="post">
-        <h2 class="subtitle">用户名</h2>
-        <input type="text" name="username" id="username" placehoder='请输入用户名'>
-        <h2 class="subtitle">密码</h2>
-        <input type="password" name="password" id="password" placehoder='请输入密码'>
-        <br><br>
-        <input type="submit" value="登录">
+        <div class="login-tit">登录</div>
+        <div class="login-input">
+            <h1>用户名</h1>
+         <input type="text" name="username" id="username" placeholder="请输入用户名">
+        </div>
+        <div class="login-input">
+            <h1>密码</h1>
+        <input type="password" name="password" id="password" placeholder="请输入密码">
+        </div>
+        <div class="login-btn">
+            <span>
+                <button class="button">登录</button>
+            </span>
+        </div>
     </form>
 </div>
+
+
+<!-- scripts -->
+<script src="../static/2view/js/particles.js"></script>
+<script src="../static/2view/js/app.js"></script>
+<script>
+  function changeImg(){
+    let pic = document.getElementById('picture');
+    console.log(pic.src)
+    if(pic.getAttribute("src",2) =="img/check.png"){
+      pic.src ="img/checked.png"
+    }else{
+      pic.src ="img/check.png"
+    }
+  }
+</script>
 </body>
 </html>

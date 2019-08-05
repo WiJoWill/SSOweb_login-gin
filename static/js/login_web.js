@@ -4,11 +4,10 @@ $(document).ready(function() {
         rules:{
             username:{
                 required:true,
-                rangelength:[5,10]
             },
             password:{
                 required: true,
-                rangelength:[5,10]
+                rangelength:[5,10],
             },
             reassure:{
                 required:true,
@@ -19,7 +18,6 @@ $(document).ready(function() {
         messages:{
             username:{
                 required:"请输入用户名",
-                rangelength:"用户名必须是5-10位"
             },
             password:{
                 required:"请输入密码",
@@ -57,7 +55,6 @@ $(document).ready(function() {
         rules:{
             username:{
                 required:true,
-                rangelength:[5,10]
             },
             password:{
                 required:true,
@@ -67,7 +64,6 @@ $(document).ready(function() {
         messages:{
             username:{
                 required:"请输入用户名",
-                rangelength:"用户名必须是5-10位"
             },
             password:{
                 required:"请输入密码",
@@ -96,26 +92,25 @@ $(document).ready(function() {
         }
     });
     //修改密码
+    //实际程序中放入了register中
     $("#changepw-form").validate({
         rules:{
             username:{
                 required:true,
-                rangelength:[5,10]
             },
             password:{
                 required: true,
-                rangelength:[5,10]
+                rangelength:[5,10],
             },
             reassure:{
                 required:true,
                 rangelength:[5,10],
-                equalTo:"#register_password"
+                equalTo:"#password"
             }
         },
         messages:{
             username:{
                 required:"请输入用户名",
-                rangelength:"用户名必须是5-10位"
             },
             password:{
                 required:"请输入密码",
@@ -129,7 +124,7 @@ $(document).ready(function() {
         },
         submitHandler:function (form) {
             var urlStr = "/change_password";
-            alert("urlStr:"+urlStr)
+            // alert("urlStr:"+urlStr)
             $(form).ajaxSubmit({
                 url:urlStr,
                 type:"post",
