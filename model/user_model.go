@@ -60,9 +60,6 @@ func QueryUserWithParam(username ,password string)int{
 	sql:=fmt.Sprintf("where username='%s' and password='%s'",username,password)
 	return QueryUserWightCon(sql)
 }
-
-
-
 //根据用户id返回用户名和状态
 func QueryUserInfoWithID(id int) string{
 	safe_sql := fmt.Sprintf("where id = '%s'", strconv.Itoa(id))

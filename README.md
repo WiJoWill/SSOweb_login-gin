@@ -6,8 +6,6 @@ Golang编写的sso单点登录系统
 
 此项目比较粗糙，是一个草稿式的demo，欢迎各路大神增删填补。如果有任何疑问欢迎评论或是联系我（联系方式在文档底部）。
 
-（此仓库不包含整理/修改后保密协议内且不属于个人的代码，请谅解）
-
 ***
 
 #### 功能特性
@@ -86,8 +84,130 @@ gin框架(https://github.com/gin-gonic/gin)
 ##### Models
 
 - redis_model.go
+
+  - 连接对应的redis
+
+  - ```go
+    func ConnectRedis(){}
+    ```
+
+  - 存储token，key为token， value为username，存储于db0
+
+  - ```go
+    func SetToken(token string, username string){}
+    ```
+
+  - 存储用户登录的ip，ip为token，value为token，存储于db2
+
+  - ```go
+    func SetTokenIP(ip string, token string){}
+    ```
+
+  - 查询ip地址是否与对应的token相符合，如果不是则说明用户不于登录时的ip访问网站，则不允许访问
+
+  - ```go
+    func CheckIPAndToken(ip string, token string) bool {}
+    ```
+
+  - 检查密钥是否存在于redis库中
+
+  - ```go
+    func CheckToken(token string) bool{}
+    ```
+
+  - 从redis库中获取对应token的username
+
+  - ```go
+    func GetTokenValue (token string) string{}
+    ```
+
 - salt_model.go
+
+  - usersalt的structure，包含id, username, saltstring
+
+  - ```go
+    type UserSalt struct{}
+    ```
+
+  - 生成新的用户盐，并且插入到表中
+
+  - ```go
+    func InsertUserSalt (salt UserSalt) (int64, error){}
+    ```
+
+  - 更新用户盐信息（但感觉没有什么用，除非后期提供修改用户名的功能）
+
+  - ```go
+    func UpdateUserSalt (salt UserSalt)(int64, error){}
+    ```
+
+  - 根据用户的id返回对应的用户盐
+
+  - ```go
+    func QueryUserSaltWithID(id int)string {}
+    ```
+
+  - 根据用户名返回对应的用户盐
+
+  - ```go
+    func QueryUserSaltWithUsername(username string) string{}
+    ```
+
 - user_model.go
+
+  - 这是一个user的structure，包含id，username，password和status
+
+  - ```go
+    type User struct{}
+    ```
+
+  - 生成新的用户并插入至用户表
+
+  - ```go
+    func InsertUser(user User)(int64, error){}
+    ```
+
+  - 修改用户的资料信息，更新相关内容
+
+  - ``` go
+    func UpdateUser(user User)(int64 error){}
+    ```
+
+  - 按条件查询对应用户，需要输入对应的sql
+
+  - ```go
+    func QueryUserWightCon(con string) int{}
+    ```
+
+  - 按条件查询用户状态，需要输入对应的sql
+
+  - ```go
+    func QueryUserStatusWightCon(con string) int{}
+    ```
+
+  - 根据用户名查询用户状态
+
+  - ```go
+    func QueryUserStatusWithusername(username string) int{}
+    ```
+
+  - 根据用户名查询用户id
+
+  - ```go
+    func QueryUserWithusername(username string) int{}
+    ```
+
+  - 根据用户名和密码，查询id，一般用来作为用户登录的信息检验
+
+  - ```go
+    func QueryUserWithParam(username, password string) int{}
+    ```
+
+  - 根据用户id查询用户状态
+
+  - ```go
+    func QueryUserInfoWithID(id int) string {}
+    ```
 
 ##### Routers
 

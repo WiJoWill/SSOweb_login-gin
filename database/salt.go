@@ -1,7 +1,7 @@
 package database
 
 import (
-"database/sql"
+_"database/sql"
 _"fmt"
 _"github.com/go-sql-driver/mysql"
 "log"
