@@ -1,4 +1,4 @@
-Golang编写的sso单点登录系统
+### Golang编写的sso单点登录系统
 
 #### 项目简介
 
@@ -39,10 +39,55 @@ gin框架(https://github.com/gin-gonic/gin)
 ##### Controllers
 
 - homepage.go
-- register_controller.go
-- login_controller.go
+
+  - 「测试用的Homepage，无实际功能」
+
+- register_controller.go 「注释已详细解释代码」
+
+  - 获取页面
+
+    ```go
+    func RegisterGet (c *gin.Context){}
+    ```
+
+  - 注册功能
+
+  - ```go
+    func RegisterPost (c *gin.Context){}
+    ```
+
+- login_controller.go 「注释已详细解释代码」
+
+  - 获取页面
+
+  - ```go
+    func LoginGet (c *gin.Context){}
+    ```
+
+  - 登录功能
+
+  - ``` go
+    func LoginPost (c *gin.Context)
+    ```
+
+  - 生成token
+
+  - ```go
+    func generateToken(c *gin.Context, user model.User) string {}
+    ```
+
+  - 生成一个子token，逻辑与上一个方法相同
+
+  - 登录结果
+
+    ```go
+    type LoginResult struct {}
+    ```
+
 - token_controller.go
+
 - database_controller.go
+
 - changepw_controller.go
 
 ##### Databases
