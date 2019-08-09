@@ -3,7 +3,6 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	_"github.com/go-sql-driver/mysql"
 	"log"
 )
 var db *sql.DB
@@ -13,7 +12,7 @@ func InitMysql() {
 	if db == nil {
 		db, _ = sql.Open("mysql", "root:will20000324@tcp(127.0.0.1:3306)/web_login?charset=utf8")
 		CreateTableWithUser()
-		CreateTableWithSalt()
+		//CreateTableWithSalt()
 	}
 }
 

@@ -59,7 +59,7 @@ func JWTAuth() gin.HandlerFunc {
 		//url := c.GetHeader("Referer")
 		if token == "" {
 			c.Abort()
-			c.Redirect(302, "http://127.0.0.1:8081/login")
+			c.Redirect(302, "/login")
 			return
 		}
 		log.Print("get token: ", token)
@@ -83,7 +83,7 @@ func JWTAuth() gin.HandlerFunc {
 				"msg":    "IP地址与登录地点不符，请重新登录",
 			})
 			c.Abort()
-			c.Redirect(302,"http://127.0.0.1:8081/login")
+			c.Redirect(302,"/login")
 			return
 		}
 
@@ -97,7 +97,7 @@ func JWTAuth() gin.HandlerFunc {
 					"msg":    "授权已过期",
 				})
 				c.Abort()
-				c.Redirect(302, "http://127.0.0.1:8081/login")
+				c.Redirect(302, "/login")
 				return
 			}
 			c.JSON(http.StatusOK, gin.H{

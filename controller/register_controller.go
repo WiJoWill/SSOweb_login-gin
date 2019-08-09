@@ -54,6 +54,7 @@ func RegisterPost(c *gin.Context){
 	user := model.User{0,username,password,0}
 	_,err :=model.InsertUser(user)
 	if err != nil{
+
 		c.JSON(http.StatusOK, gin.H{"code":0,"message":"注册失败"})
 	}else{
 		c.JSON(http.StatusOK, gin.H{"code":1,"message":"注册成功"})

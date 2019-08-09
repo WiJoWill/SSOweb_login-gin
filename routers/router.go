@@ -1,10 +1,7 @@
 package routers
 
 import (
-	_ "github.com/gin-contrib/sessions"
-	_ "github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
-	_ "github.com/gomodule/redigo/redis"
 	"web_login/controller"
 )
 
