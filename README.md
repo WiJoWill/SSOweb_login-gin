@@ -1,4 +1,4 @@
-### Golang编写的sso单点登录系统
+Golang编写的sso单点登录系统
 
 #### 项目简介
 
@@ -78,6 +78,10 @@ gin框架(https://github.com/gin-gonic/gin)
 
   - 生成一个子token，逻辑与上一个方法相同
 
+  - ```go
+    func (j *JWT) CreateTokenSub (claims UserClaims) (string, error){}
+    ```
+
   - 登录结果
 
     ```go
@@ -86,18 +90,73 @@ gin框架(https://github.com/gin-gonic/gin)
 
 - token_controller.go
 
-  - 一些常数，用来作为登录信息报告「查看源码和注释」
+  - 常数，用来作为登录信息「查看源码和注释」
+
   - Userclaims
+
+    ```go
+    type UserClaims struct{}
+    ```
+
   - 新建jwt实体
+
+  - ``` go
+    func NewJWT() *JWT{}
+    ```
+
   - 获取SignKey
+
+  - ```go
+    func GetSignKey() string{}
+    ```
+
   - 设置SignKey
+
+  - ```go
+    func SetSignKey() string{}
+    ```
+
   - JWT中间件，用来检验token信息，只服务于用户认证中心，子系统有类似功能但应该根据子系统目的进行增删查改
+
+  - ```go
+    func (j *JWT) CreateToken(claims UserClaims) (string, error) {}
+    ```
+
   - 生成Token
+
+  - ```go
+    func (j *JWT) CreateTokenSub (claims UserClaims) (string, error){}
+    ```
+
   - 给子系统生成token，可不启用
+
+  - ```go
+    func (j *JWT) CreateTokenSub (claims UserClaims) (string, error){}
+    ```
+
   - 解析token，用来判断token
+
+  - ```go
+    func (j *JWT) ParseToken(tokenString string) (*UserClaims, error) {}
+    ```
+
   - 更新token，一般不启用
+
+  - ```go
+    func (j *JWT) RefreshToken(tokenString string) (string, error) {}
+    ```
+
   - 验证用户的token信息，要使用redis
+
+  - ```go
+    func CheckUserToken (token string) bool{}
+    ```
+
   - 从redis库通过读取token获取用户的信息
+
+  - ```go
+    func GetUserFromToken (token string) bool{}
+    ```
 
 - database_controller.go
 
