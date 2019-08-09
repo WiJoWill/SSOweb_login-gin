@@ -86,9 +86,38 @@ gin框架(https://github.com/gin-gonic/gin)
 
 - token_controller.go
 
+  - 一些常数，用来作为登录信息报告「查看源码和注释」
+  - Userclaims
+  - 新建jwt实体
+  - 获取SignKey
+  - 设置SignKey
+  - JWT中间件，用来检验token信息，只服务于用户认证中心，子系统有类似功能但应该根据子系统目的进行增删查改
+  - 生成Token
+  - 给子系统生成token，可不启用
+  - 解析token，用来判断token
+  - 更新token，一般不启用
+  - 验证用户的token信息，要使用redis
+  - 从redis库通过读取token获取用户的信息
+
 - database_controller.go
 
+  - 显示页面，Get方法
+  - 显示前五个用户的基础数据，Post方法
+  - 请求用户信息，具有验证IP的功能，如果IP不一致则让用户重新登录（这里未实施，如果有需要请自行添加Redirect）
+
 - changepw_controller.go
+
+  - 显示页面，Get方法
+
+  - ```go
+    func ChangepwGet (C *gin.Context){}
+    ```
+
+  - 修改密码，Post方法
+
+  - ```go
+    func ChangepwPost (c *gin.Context){}
+    ```
 
 ##### Databases
 
