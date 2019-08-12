@@ -114,7 +114,7 @@ func generateToken(c *gin.Context, user model.User) string {
 	}
 	c.Set("data",data)
 	//这里的maxAge只设定了300秒，肯自行设定token于cookie中的过期时间
-	c.SetCookie("token", token, 300, "/","127.0.0.1",false,true)
+	c.SetCookie("token", token, 300, "/","139.155.74.24",false,true)
 	return token
 }
 
